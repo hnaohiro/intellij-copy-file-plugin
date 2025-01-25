@@ -1,18 +1,27 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.hnaohiro.intellijcopyfileplugin</id>
-    <name>intellij-copy-file-plugin</name>
+    <name>Copy File Util</name>
     <vendor>hnaohiro</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.hnaohiro.intellijcopyfileplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+    <actions>
+        <action
+                id="com.github.hnaohiro.intellijcopyfileplugin.CopyFileNameAndCodeAction"
+                class="com.github.hnaohiro.intellijcopyfileplugin.CopyFileNameAndCodeAction"
+                text="Copy File Name and Code"
+                description="Copy this file's name and code to clipboard">
 
-    <applicationListeners>
-        <listener class="com.github.hnaohiro.intellijcopyfileplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+            <add-to-group
+                    group-id="EditorTabPopupMenu"
+                    anchor="first" />
+
+            <keyboard-shortcut
+                    keymap="$default"
+                    first-keystroke="control meta C"/>
+        </action>
+    </actions>
 </idea-plugin>
