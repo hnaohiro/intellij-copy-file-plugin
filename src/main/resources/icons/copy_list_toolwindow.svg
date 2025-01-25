@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13">
+    <!-- 背景クリップボード -->
+    <rect x="3" y="2" width="18" height="20" rx="2" ry="2" fill="#e3e4e8" stroke="#6c6c6c" stroke-width="1.5"/>
+
+    <!-- ヘッダ部分 -->
+    <rect x="6" y="4" width="12" height="2" rx="1" ry="1" fill="#d1d2d6"/>
+
+    <!-- リストの項目 -->
+    <circle cx="7" cy="9" r="1" fill="#6c6c6c"/>
+    <rect x="9" y="8" width="9" height="2" rx="1" ry="1" fill="#6c6c6c"/>
+
+    <circle cx="7" cy="13" r="1" fill="#6c6c6c"/>
+    <rect x="9" y="12" width="9" height="2" rx="1" ry="1" fill="#6c6c6c"/>
+
+    <circle cx="7" cy="17" r="1" fill="#6c6c6c"/>
+    <rect x="9" y="16" width="9" height="2" rx="1" ry="1" fill="#6c6c6c"/>
+</svg>

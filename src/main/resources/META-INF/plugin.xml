@@ -1,27 +1,38 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.hnaohiro.intellijcopyfileplugin</id>
-    <name>Copy File Util</name>
+    <name>Copy File List Util</name>
     <vendor>hnaohiro</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+<!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
 
     <actions>
+        <!-- "Add to Copy List" アクション -->
         <action
-                id="com.github.hnaohiro.intellijcopyfileplugin.CopyFileNameAndCodeAction"
-                class="com.github.hnaohiro.intellijcopyfileplugin.CopyFileNameAndCodeAction"
-                text="Copy File Name and Code"
-                description="Copy this file's name and code to clipboard">
-
+                id="com.github.hnaohiro.intellijcopyfileplugin.copyfilelist.AddToCopyListAction"
+                class="com.github.hnaohiro.intellijcopyfileplugin.copyfilelist.AddToCopyListAction"
+                text="Add to Copy List"
+                description="Add this file to the copy list">
             <add-to-group
                     group-id="EditorTabPopupMenu"
                     anchor="first" />
-
+            <add-to-group
+                    group-id="ProjectViewPopupMenu"
+                    anchor="first" />
             <keyboard-shortcut
                     keymap="$default"
                     first-keystroke="control meta C"/>
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Tool Window 定義 -->
+        <toolWindow
+                id="CopyList"
+                anchor="right"
+                factoryClass="com.github.hnaohiro.intellijcopyfileplugin.copyfilelist.CopyListToolWindowFactory"
+                icon="/icons/copy_list_toolwindow.svg" />
+    </extensions>
 </idea-plugin>
